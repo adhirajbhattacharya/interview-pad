@@ -1,0 +1,47 @@
+Snake Game - One we played in old nokia phones
+Screen is the game board = assume 10x10 for now.
+Snake can move in 4 directions - UP, RIGHT, DOWN, LEFT
+
+When given a direction, snake moves 1 cell in the direction.
+Initial size = 3
+Snake grows by 1 for every 5 moves
+Game is over when snake moves into its body
+
+Q1. Where do i start the snake? - Anywhere. I chose top-left cell.
+Q2. What happens when snake moves into the boundaries? - It will come out from its opposite boundary.
+
+interface Snake:
+    func moveSnake
+    func isGameOver
+}
+
+CellType:
+    EMPTY
+    SNAKE_BODY
+    // FOOD in future if required for actual snake game
+
+Cell:
+    int x
+    int y
+    CellType type
+
+SnakeImpl: implements Snake
+    List<Cell> body
+    int size
+    int move
+    func moveSnake
+    func isGameOver
+
+Direction:
+    UP, DOWN, RIGHT, LEFT
+
+SnakeGame:
+    Snake snake
+    func moveSnake
+    func isGameOver
+
+
+
+
+
+
